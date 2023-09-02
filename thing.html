@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+money = 100000000000000;
+setInterval(function(){document.querySelector("h2").innerText = "$" + money}, 10);
+cl = 1;
+setInterval(function(){document.querySelectorAll("button")[1].innerText = "Click x (Cost: " + cl * (cl + 1) / 2 + ")"}, 10);
+setInterval(function(){document.querySelector("p").innerText = "Value: " + cl}, 10);
+c = 0;
+setInterval(function(){document.querySelectorAll("button")[2].innerText = "Cursor (Cost: " + cl * (cl + 1) * 250 + ")"}, 10);
+setInterval(function(){document.querySelectorAll("p")[1].innerText = "You have " + c}, 10);
+</script>
+<h2>$0</h2>
+
+<button onclick="money += cl;">Click</button>
+<br>
+
+<span style="font-size: 75px;">x</span>
+<button onclick="if(money >= cl * (cl + 1) / 2) {
+money -= cl * (cl + 1) / 2;
+cl += 1;
+}">Click x (Cost: 1)</button>
+<p id="ca">Value: 1</p>
+
+<!--<img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
+<button onclick="if(money >= c * c * c * 100 + 500) {
+money -= c * c * c * 100 + 500;
+c += 1;
+}">Cursor (Cost: 500)</button>
+<p id="ca">You have 0</p>-->
+
+</body>
+</html>
