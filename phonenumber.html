@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Enter your phone number</title>
+</head>
+<body>
+<span>Enter your phone number: <span id=span>500-000-0000</span></span>
+<br><br>
+<button onclick="document.getElementById('span').innerText = Math.floor(Math.random() * 1000) + '-' + Math.floor(Math.random() * 1000) + '-' + Math.floor(Math.random() * 10000)">Reroll</button>
+<br><br>
+<span>Confirm your phone number: </span>
+<input type="range" min="0" max="9999999999" value="5000000000" oninput="document.getElementById('span2').innerText = this.value.substring(0, 3) + '-' + this.value.substring(3, 6) + '-' + this.value.substring(6, 10);">
+<p>Value: <span id=span2>500-000-0000</span></p>
+<br>
+<span>Re-confirm your phone number: </span>
+<button onclick="value = parseInt(document.getElementById('span3').innerText.substring(0, 3) + document.getElementById('span3').innerText.substring(4, 7) + document.getElementById('span3').innerText.substring(8, 12)) + 1;
+document.getElementById('span3').innerText = value.substring(0, 3) + '-' + value.substring(3, 6) + '-' + value.substring(6, 10);">+</button> 
+<button onclick="value = parseInt(document.getElementById('span3').innerText.substring(0, 3) + document.getElementById('span3').innerText.substring(4, 7) + document.getElementById('span3').innerText.substring(8, 12)) - 1;
+document.getElementById('span3').innerText = value.substring(0, 3) + '-' + value.substring(3, 6) + '-' + value.substring(6, 10);">-</button> <p>Value: <span id=span3>500-000-0000</span></p>
+</body>
+</html>
